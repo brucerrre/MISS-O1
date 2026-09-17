@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-fundo: #050508;            /* Preto profundeza do oceano */
+    --cor-principal: #600000;        /* Vermelho carmesim do centro da capa */
+    --cor-secundaria: #120305;       /* Fundo escuro para os botões */
+    --cor-destaque: #ffffff;         /* Branco puro para o título EPIC */
+    --cor-borda: #d4af37;            /* Dourado para detalhes e seleção */
+    --cor-texto: #f0f0f0;            /* Texto claro */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.caixa-principal {
+    background: radial-gradient(circle, #8b0000 0%, #300000 80%, #100000 100%);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 40px 30px;
+    
+    /* Formato Octogonal inspirado no centro da capa */
+    clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+    border: 2px solid var(--cor-borda);
+    box-shadow: 0 0 35px rgba(218, 0, 0, 0.6);
+    position: relative;
+}
+
+.caixa-principal::before {
+    content: "THE MUSICAL";
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+    color: var(--cor-borda);
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--cor-destaque);
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 0, 0.8);
+}
+
+.caixa-perguntas {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    border: 1px solid var(--cor-borda);
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    line-height: 1.4;
+    
+    /* Bordas chanfradas nos botões */
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+button:hover {
+    background-color: #8b0000;
+    color: #ffffff;
+    border-color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    transform: scale(1.02);
+}
+
+.texto-resultado {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #ffebad;
+    text-align: center;
+    padding: 10px;
+}
